@@ -1,0 +1,10 @@
+from django.http import HttpResponse
+
+def index (request):
+    return HttpResponse("yo")
+
+def post (request):
+    if request.method == 'POST':
+        return HttpResponse("nice")
+    else:
+        return HttpResponse("wrong request jackass")
