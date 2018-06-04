@@ -4,10 +4,13 @@ from cryptography.hazmat.primitives import serialization
 from cryptography.hazmat.primitives import hashes
 from cryptography.hazmat.primitives.asymmetric import padding
 import cryptography.exceptions as cryptExceptions
+import os.path
 
 def getSig(request):
 
-    with open("/Users/zach/Projects/python/django/myapp/myapp/private.pem", "rb") as key_file:
+    PROJECT_DIR= os.path.dirname(__file__)
+
+    with open(PROJECT_DIR + "/private.pem", "rb") as key_file:
 
         Keys = serialization.load_pem_private_key(
             key_file.read(),
