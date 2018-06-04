@@ -8,7 +8,8 @@ while True:
     if (choice == "sign"):
         messhash = input("Enter your message or hash: ")
         sigfile = input("Where would you like to save your signature?: ")
-        signature = timestamp.signTime(messhash)
+        url = "http://localhost:8000/sign/"
+        signature = timestamp.signTime(messhash, url)
         sigfile = open(sigfile, "w")
         sigfile.write(signature)
         sigfile.close()

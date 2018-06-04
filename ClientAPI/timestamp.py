@@ -43,7 +43,6 @@ def verifyTime(message, signature, date):
 def signTime(messhash):
 
     messhash = messhash.encode()
-    url = "http://localhost:8000/sign/"
     request = requests.post(url, data=messhash)
 
     return request.text
